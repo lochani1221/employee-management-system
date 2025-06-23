@@ -1,0 +1,74 @@
+/* Full page background with subtle gradient overlay */
+.login-page {
+  height: 100vh;
+  width: 100vw;
+  background: 
+    linear-gradient(rgba(30, 41, 59, 0.7), rgba(30, 41, 59, 0.7)),
+    url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* The login card container */
+.login-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 12px;
+  width: 350px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  text-align: center;
+}
+
+/* Title */
+.login-title {
+  margin-bottom: 30px;
+  color: #1e293b;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+/* Input fields styling */
+.login-input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 1.8px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.login-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 5px #3b82f6;
+}
+
+/* Login button */
+.login-btn {
+  width: 100%;
+  padding: 12px 15px;
+  background-color: #3b82f6;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #2563eb;
+}
+
+/* Error message styling */
+.login-error {
+  margin-top: 15px;
+  color: #dc2626;
+  font-weight: 600;
+}
