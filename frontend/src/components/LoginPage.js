@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import './LoginPage.css';  // make sure this file exists
+import './LoginPage.css'; // Ensure this CSS file exists
 
 const LoginPage = () => {
   const [loginData, setLoginData] = useState({ username: '', password: '' });
@@ -14,15 +14,38 @@ const LoginPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
       const res = await axios.post('http://localhost:8080/api/auth/login', loginData);
-      setMessage('');
-      navigate('/dashboard');
-    } catch (error) {
-      if (error.response) {
-        setMessage(error.response.data);
+      const role = res.data.role;
+
+      // ✅ Store username in localStorage
+      localStorage.setItem('username', loginData.username);
+      localStorage.setItem('employeeId', res.data.employeeId);
+      localStorage.setItem('departmentId', res.data.departmentId);
+
+
+
+
+      setMessage(''); // Clear error messages
+
+      // ✅ Navigate to the correct dashboard based on role
+      if (role === 'ROLE_ADMIN') {
+        navigate('/dashboard');
+      } else if (role === 'ROLE_HR') {
+        navigate('/hr');
+      } else if (role === 'ROLE_MANAGER') {
+        navigate('/manager');
+      } else if (role === 'ROLE_EMPLOYEE') {
+        navigate('/employee');
       } else {
-        setMessage('Login failed!');
+        setMessage('⚠️ Unknown role. Please contact the administrator.');
+      }
+    } catch (error) {
+      if (error.response?.data?.message) {
+        setMessage(error.response.data.message);
+      } else {
+        setMessage('❌ Login failed. Please check your credentials.');
       }
     }
   };

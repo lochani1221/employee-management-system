@@ -1,0 +1,308 @@
+/* Container and layout */
+.manage-attendance {
+  display: flex;
+  min-height: 100vh;
+  background-color: #fafafa;
+  font-family: Arial, sans-serif;
+}
+
+/* Sidebar styling */
+.manage-attendance > *:first-child {
+  flex: 0 0 250px;
+  background-color: #1e2a38;
+  color: white;
+  box-shadow: 2px 0 8px rgb(0 0 0 / 0.1);
+  overflow-y: auto;
+}
+
+/* Main content */
+.manage-attendance > div:last-child {
+  max-width: 900px;
+  width: 100%;
+  padding: 20px 30px 40px;
+  margin: 0 auto;
+  /* Remove these to get rid of outer box and rounded corners */
+  background: transparent; /* or remove this line */
+  border-radius: 0;
+  box-shadow: none;
+  text-align: center;
+}
+
+
+/* Headings */
+.manage-attendance h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Search container */
+.search-container {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.search-container input[type="text"],
+.search-container input[type="number"],
+.search-container select {
+  padding: 6px 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.search-container input[type="text"] {
+  min-width: 180px;
+  max-width: 250px;
+  flex-grow: 1;
+}
+
+.search-container select {
+  min-width: 80px;
+}
+
+.search-container input[type="number"] {
+  min-width: 100px;
+}
+
+.search-container input[type="text"]:focus,
+.search-container input[type="number"]:focus,
+.search-container select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 6px #a1c4fd;
+}
+
+/* Buttons container */
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.button-row button {
+  padding: 12px 6px; /* increased vertical padding */
+  font-size: 14px;
+  width: 120px;
+  cursor: pointer;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  color: white;
+  transition: background-color 0.3s ease;
+  box-sizing: border-box;
+  height: 42px; /* added fixed height */
+  line-height: 1.2;
+}
+.button-row button.print-btn {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+.button-row button.print-btn:hover {
+  background-color: #0056b3;
+}
+
+.button-row button.pdf-btn {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+.button-row button.pdf-btn:hover {
+  background-color: #1e7e34;
+}
+
+.button-row button.excel-btn {
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+.button-row button.excel-btn:hover {
+  background-color: #117a8b;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+}
+thead tr {
+  background-color: #f0f0f0;
+}
+th, td {
+  padding: 8px;
+  border: 1px solid #ccc;
+  text-align: left;
+  vertical-align: middle;
+}
+tbody tr:hover {
+  background-color: #e6f2ff;
+}
+table input[type="datetime-local"] {
+  padding: 4px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Action buttons container */
+.action-buttons-wrapper {
+  display: flex;
+  gap: 8px;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+/* Buttons inside table action cell */
+.action-buttons-wrapper button {
+  cursor: pointer;
+  border: none;
+  padding: 10px 16px;  /* increased vertical and horizontal padding */
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  color: white;
+  min-width: 70px;
+  text-align: center;
+  line-height: 1.2;
+  height: 40px; /* fixed height */
+}
+
+/* Edit button: green */
+.action-buttons-wrapper button.pdf-btn {
+  background-color: #28a745;
+}
+.action-buttons-wrapper button.pdf-btn:hover {
+  background-color: #1e7e34;
+}
+
+/* Delete button: red */
+.action-buttons-wrapper button.excel-btn {
+  background-color: #dc3545;
+}
+.action-buttons-wrapper button.excel-btn:hover {
+  background-color: #a71d2a;
+}
+
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Modal content */
+.modal {
+  background-color: white;
+  padding: 20px 30px;
+  border-radius: 8px;
+  width: 320px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+/* Modal heading */
+.modal h3 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Modal input */
+.modal input[type="datetime-local"] {
+  width: 100%;
+  padding: 6px 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+/* Modal buttons */
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.modal-buttons button {
+  padding: 6px 14px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  color: white;
+  min-width: 70px;
+}
+
+.modal-buttons button:first-child {
+  background-color: #28a745;
+}
+.modal-buttons button:first-child:hover {
+  background-color: #1e7e34;
+}
+.modal-buttons button:last-child {
+  background-color: #6c757d;
+}
+.modal-buttons button:last-child:hover {
+  background-color: #5a6268;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .manage-attendance {
+    flex-direction: column;
+  }
+  .manage-attendance > *:first-child {
+    flex: none;
+    width: 100%;
+    height: auto;
+  }
+  .manage-attendance > div:last-child {
+    max-width: 100%;
+    margin: 15px 10px;
+    padding: 20px;
+  }
+  table thead {
+    display: none;
+  }
+  tbody tr {
+    display: block;
+    margin-bottom: 15px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+    border-radius: 8px;
+    padding: 15px;
+  }
+  tbody td {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: none;
+  }
+  tbody td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #28a745;
+  }
+  tbody td:last-child {
+    text-align: right;
+  }
+}

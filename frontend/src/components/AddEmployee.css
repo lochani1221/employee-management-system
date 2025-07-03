@@ -1,4 +1,5 @@
-.form-container {
+
+.addEmployee-form-container {
   max-width: 900px;
   margin: 40px auto;
   padding: 30px;
@@ -7,40 +8,40 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
-.employee-form {
+.addEmployee-employee-form {
   display: flex;
   justify-content: space-between;
   gap: 30px;
   flex-wrap: wrap;
 }
 
-.form-left,
-.form-right {
+.addEmployee-form-left,
+.addEmployee-form-right {
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-.employee-form label {
+.addEmployee-employee-form label {
   font-weight: bold;
   margin-top: 10px;
 }
 
-.employee-form input,
-.employee-form select {
+.addEmployee-employee-form input,
+.addEmployee-employee-form select {
   padding: 8px 12px;
   margin-top: 5px;
   border: 1px solid #ccc;
   border-radius: 6px;
 }
 
-.form-actions {
+.addEmployee-form-actions {
   width: 100%;
   margin-top: 20px;
   text-align: center;
 }
 
-.form-actions button {
+.addEmployee-form-actions button {
   padding: 10px 25px;
   font-size: 16px;
   background-color: #007bff;
@@ -51,6 +52,6 @@
   transition: background-color 0.3s;
 }
 
-.form-actions button:hover {
+.addEmployee-form-actions button:hover {
   background-color: #0056b3;
 }

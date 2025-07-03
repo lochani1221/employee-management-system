@@ -1,0 +1,76 @@
+/* MyProfile.css */
+
+.profile-content {
+  margin-left: 25px;
+  padding: 30px;
+  flex: 1;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+}
+
+h2 {
+  color: #0b3d91;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.profile-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 25px 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  max-width: 800px;
+  margin: auto;
+}
+
+.profile-columns {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.profile-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.profile-column input {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: border-color 0.3s ease;
+}
+
+.profile-column input:focus {
+  border-color: #0b3d91;
+  outline: none;
+}
+
+button {
+  background-color: #0b3d91;
+  color: #fff;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #093172;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profile-columns {
+    flex-direction: column;
+  }
+}

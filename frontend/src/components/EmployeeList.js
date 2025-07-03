@@ -71,7 +71,8 @@ const EmployeeList = () => {
                     <th>Email ID</th>
                     <th>Address</th>
                     <th>Gender</th>
-                    <th>Department</th>
+                    <th>Role</th>
+                    <th>Position</th>
                     <th>Status</th>
                     <th>Date Appointed</th>
                     <th>Action</th>
@@ -86,6 +87,7 @@ const EmployeeList = () => {
                       <td>{emp.emailId}</td>
                       <td>{emp.address}</td>
                       <td>{emp.gender}</td>
+                      <td>{emp.role}</td>
                       <td>{emp.department?.name || 'N/A'}</td>
                       <td>{emp.status}</td>
                       <td>{emp.appointed_date}</td>
@@ -194,6 +196,15 @@ const EmployeeList = () => {
                   <option key={dept.id} value={dept.id}>{dept.name}</option>
                 ))}
               </Form.Select>
+                <Form.Group className="mb-3">
+              <Form.Label>Role</Form.Label>
+              <Form.Control
+                type="text"
+                name="role"
+                value={selectedEmployee?.role || ''}
+                onChange={handleEditChange}
+              />
+            </Form.Group>
             </Form.Group>
           </Form>
         </Modal.Body>

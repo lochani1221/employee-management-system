@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './AddEmployee.css'; // custom styles
+import './AddEmployee.css';
 
 const AddEmployee = () => {
   const [employee, setEmployee] = useState({
@@ -11,7 +11,10 @@ const AddEmployee = () => {
     address: '',
     gender: '',
     appointed_date: '',
-    status: ''
+    status: '',
+    username: '',
+    password: '',
+    role: ''
   });
 
   const [departments, setDepartments] = useState([]);
@@ -26,55 +29,53 @@ const AddEmployee = () => {
     setEmployee({ ...employee, [e.target.name]: e.target.value });
   };
 
-const handleSubmit = (e) => {
-  e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  const employeeData = {
-    firstName: employee.firstName,
-    lastName: employee.lastName,
-    emailId: employee.emailId,
-    department: { id: parseInt(employee.departmentId) },
-    address: employee.address,
-    gender: employee.gender,
-    appointed_date: employee.appointed_date,
-    status: employee.status
+    const employeeData = {
+      firstName: employee.firstName,
+      lastName: employee.lastName,
+      emailId: employee.emailId,
+      department: { id: parseInt(employee.departmentId) },
+      address: employee.address,
+      gender: employee.gender,
+      appointed_date: employee.appointed_date,
+      status: employee.status,
+      username: employee.username,
+      password: employee.password,
+      role: employee.role
+    };
+
+    axios.post('http://localhost:8080/api/auth/register', employeeData, {
+      headers: { 'Content-Type': 'application/json' }
+    })
+      .then(() => {
+        alert('Employee registered successfully!');
+        setEmployee({
+          firstName: '',
+          lastName: '',
+          emailId: '',
+          departmentId: '',
+          address: '',
+          gender: '',
+          appointed_date: '',
+          status: '',
+          username: '',
+          password: '',
+          role: ''
+        });
+      })
+      .catch(error => {
+        console.error('Registration error:', error);
+        alert('Error registering employee.');
+      });
   };
 
-  axios.post(
-    'http://localhost:8080/api/V1/employees',
-    employeeData,
-    {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    }
-  )
-    .then(() => {
-      alert('Employee saved successfully!');
-      setEmployee({
-        firstName: '',
-        lastName: '',
-        emailId: '',
-        departmentId: '',
-        address: '',
-        gender: '',
-        appointed_date: '',
-        status: ''
-      });
-    })
-    .catch((error) => {
-      console.error('Save error:', error);
-      alert('Error saving employee.');
-    });
-};
-
-
-
   return (
-    <div className="form-container">
+    <div className="addEmployee-form-container">
       <h2>Add Employee</h2>
-      <form onSubmit={handleSubmit} className="employee-form">
-        <div className="form-left">
+      <form onSubmit={handleSubmit} className="addEmployee-employee-form">
+        <div className="addEmployee-form-left">
           <label>First Name</label>
           <input type="text" name="firstName" value={employee.firstName} onChange={handleChange} required />
 
@@ -95,9 +96,20 @@ const handleSubmit = (e) => {
             <option value="Male">Male</option>
             <option value="Female">Female</option>
           </select>
+
+          <label>Username</label>
+          <input type="text" name="username" value={employee.username} onChange={handleChange} required />
+
+            <label>Role</label>
+          <select name="role" value={employee.role} onChange={handleChange} required>
+            <option value="">Select Role</option>
+            <option value="ROLE_HR">HR</option>
+            <option value="ROLE_MANAGER">Manager</option>
+            <option value="ROLE_EMPLOYEE">Employee</option>
+          </select>
         </div>
 
-        <div className="form-right">
+        <div className="addEmployee-form-right">
           <label>Last Name</label>
           <input type="text" name="lastName" value={employee.lastName} onChange={handleChange} required />
 
@@ -108,11 +120,20 @@ const handleSubmit = (e) => {
           <input type="date" name="appointed_date" value={employee.appointed_date} onChange={handleChange} required />
 
           <label>Status</label>
-          <input type="text" name="status" value={employee.status} onChange={handleChange} required />
+          <select name="status" value={employee.status} onChange={handleChange} required>
+            <option value="">Select Status</option>
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+          </select>
+
+          <label>Password</label>
+          <input type="password" name="password" value={employee.password} onChange={handleChange} required />
+
+        
         </div>
 
-        <div className="form-actions">
-          <button type="submit">Submit</button>
+        <div className="addEmployee-form-actions">
+          <button type="submit">Register Employee</button>
         </div>
       </form>
     </div>

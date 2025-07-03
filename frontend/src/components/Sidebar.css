@@ -1,5 +1,6 @@
 .sidebar {
-    width: 220px;
+      width: 250px;   /* fixed width */
+  flex-shrink: 0; 
     height: 100vh;
     position: fixed;
     top: 0;
@@ -63,6 +64,49 @@
   height: auto;
   border-radius: 8px;
   object-fit: contain;
+}
+
+.sidebar {
+  width: 220px;
+  background-color: #1e293b;
+  color: white;
+  height: 100vh;
+  padding: 20px;
+  position: fixed;
+}
+
+.sidebar-title {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.sidebar-menu {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar-menu li {
+  margin-bottom: 15px;
+}
+
+.sidebar-menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+
+
+.dashboard-container {
+  display: flex;
+}
+
+.dashboard-content {
+  margin-left: 240px;
+  padding: 20px;
+  flex: 1;
 }
 
 

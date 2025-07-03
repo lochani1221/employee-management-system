@@ -1,0 +1,71 @@
+/* ApplyLeave.css */
+
+
+
+form {
+  flex: 1;
+  max-width: 500px;
+  margin: 30px auto;
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-weight: 600;
+  color: #0b3d91;
+  margin-bottom: 5px;
+}
+
+input[type="date"],
+textarea {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+input[type="date"]:focus,
+textarea:focus {
+  border-color: #0b3d91;
+  outline: none;
+}
+
+button[type="submit"] {
+  background-color: #0b3d91;
+  color: #fff;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #093172;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  div {
+    flex-direction: column;
+  }
+
+  div > aside {
+    width: 100%;
+    flex: none;
+  }
+
+  form {
+    margin: 20px;
+    width: auto;
+  }
+}

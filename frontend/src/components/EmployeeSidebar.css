@@ -1,0 +1,112 @@
+/* Sidebar container */
+.sidebar {
+  width: 220px;
+  background-color: #1e293b;
+  color: white;
+  height: 100vh;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Logo area */
+.sidebar-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.logo-img {
+  width: 100%;
+  max-width: 140px; /* adjust as needed */
+  height: auto;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+/* Sidebar title */
+.sidebar-title {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* Sidebar menu list */
+.sidebar-menu {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+}
+
+/* Sidebar menu items */
+.sidebar-menu li {
+  margin-bottom: 15px;
+}
+
+/* Sidebar menu links */
+.sidebar-menu li a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+/* Icons next to text */
+.sidebar-icon {
+  margin-right: 8px;
+  font-size: 1rem;
+}
+
+/* Hover effect on text and icon */
+.sidebar-menu li a:hover {
+  color: #60a5fa;
+}
+
+.sidebar-menu li a:hover .sidebar-icon {
+  color: #60a5fa;
+}
+
+/* Optional: active link highlight (needs JS or NavLink in React Router) */
+/*
+.sidebar-menu li a.active {
+  color: #60a5fa;
+  font-weight: bold;
+}
+*/
+
+/* Scroll content (if menu is too long) */
+.sidebar-menu {
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* Responsive (optional) */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 180px;
+    padding: 15px;
+  }
+
+  .sidebar-title {
+    font-size: 1.2rem;
+  }
+
+  .sidebar-menu li a {
+    font-size: 0.95rem;
+  }
+
+  .logo-img {
+    max-width: 120px;
+  }
+}

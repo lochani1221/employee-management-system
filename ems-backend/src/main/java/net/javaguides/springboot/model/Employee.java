@@ -18,7 +18,7 @@ public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(name = "first_name")
     private  String firstName;
@@ -38,8 +38,6 @@ public class Employee {
     @JsonIgnoreProperties("employees")
     private Department department;
 
-
-
     @Column(name = "address")
     private  String address;
 
@@ -51,4 +49,13 @@ public class Employee {
 
     @Column(name = "status")
     private  String status;
+
+    @Column(nullable = false, unique = true)
+    private String username;
+
+    @Column(nullable = false)
+    private String password;
+
+    @Column(nullable = false)
+    private String role;  // e.g., ROLE_HR, ROLE_MANAGER, ROLE_EMPLOYEE
 }

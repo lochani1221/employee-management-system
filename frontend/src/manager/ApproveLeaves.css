@@ -1,0 +1,170 @@
+/* ApproveLeaves.css */
+
+.approve-leaves {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f7f9fc;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Sidebar (assuming ManagerSidebar is a sidebar) */
+.approve-leaves > div:first-child {
+  flex: 0 0 250px; /* fixed width for sidebar */
+  background-color: #1e2a38;
+  color: #fff;
+  box-shadow: 2px 0 8px rgb(0 0 0 / 0.1);
+  overflow-y: auto;
+}
+
+/* Main content area */
+.content {
+  flex: 1;
+  max-width: 1100px;     /* limit max width */
+  margin: 0 auto;        /* center horizontally */
+  padding: 30px 40px;
+}
+
+/* Heading */
+.content h2 {
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  color: #0b3d91;
+  border-bottom: 3px solid #0b3d91;
+  padding-bottom: 8px;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Table head */
+thead tr {
+  background-color: #0b3d91;
+  color: #fff;
+  text-align: left;
+}
+
+thead th {
+  padding: 12px 15px;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+}
+
+/* Table body rows */
+tbody tr {
+  background-color: #fafafa;
+  transition: background-color 0.25s ease;
+  cursor: default;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f0f4f9;
+}
+
+tbody tr:hover {
+  background-color: #dbe9ff;
+}
+
+/* Table data cells */
+tbody td {
+  padding: 12px 15px;
+  font-size: 0.95rem;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Action buttons container inside the action cell */
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* Buttons base styling */
+.action-buttons button {
+  padding: 7px 15px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.15);
+}
+
+/* Approve button style */
+.action-buttons button.approve-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.action-buttons button.approve-btn:hover {
+  background-color: #218838;
+}
+
+/* Reject button style */
+.action-buttons button.reject-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.action-buttons button.reject-btn:hover {
+  background-color: #c82333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .approve-leaves {
+    flex-direction: column;
+  }
+
+  .approve-leaves > div:first-child {
+    flex: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .content {
+    margin: 15px;
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  table thead tr {
+    display: none; /* Hide headers for small screens */
+  }
+
+  tbody tr {
+    display: block;
+    margin-bottom: 15px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+    border-radius: 8px;
+    padding: 15px;
+  }
+
+  tbody td {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: none;
+  }
+
+  tbody td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #0b3d91;
+  }
+
+  tbody td:last-child {
+    text-align: right;
+  }
+}

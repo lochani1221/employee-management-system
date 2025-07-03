@@ -1,0 +1,90 @@
+.department-employees {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #fafafa;
+  min-height: 100vh;
+  /* Removed max-width and centering to allow full width */
+  color: #333;
+}
+
+.department-employees h2 {
+  margin-bottom: 20px;
+}
+
+/* Search + Buttons row */
+.search-export-bar {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.search-export-bar input[type="text"] {
+  padding: 6px 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  min-width: 250px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.search-export-bar input[type="text"]:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 6px #a1c4fd;
+}
+
+.search-export-bar button {
+  padding: 6px;
+  font-size: 14px;
+  width: 130px;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  color: white;
+  transition: background-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.search-export-bar .excel-btn {
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+
+.search-export-bar .excel-btn:hover {
+  background-color: #117a8b;
+}
+
+.search-export-bar .pdf-btn {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.search-export-bar .pdf-btn:hover {
+  background-color: #1e7e34;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  color: #333;
+}
+
+thead tr {
+  background-color: #f0f0f0;
+}
+
+th,
+td {
+  padding: 8px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+tbody tr:hover {
+  background-color: #e6f2ff;
+}
